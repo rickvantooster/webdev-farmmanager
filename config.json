@@ -1,0 +1,13 @@
+{
+    "database":{
+        "user": "farmManager",
+        "password": "-lV8$@7jGnX/",
+        "database": "farmmanager",
+        "host": "51.38.99.211:3306"
+    },
+    "jwt":{
+        "secret_file": "jwt_secret.key"
+    }
+
+
+}
