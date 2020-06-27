@@ -14,14 +14,14 @@
     $email=$_POST[''];
 
     /*form handling*/
-    if($_POST['']="" || empty($password) || empty($name) ||
-    empty($adres) || empty($city) || empty($email))
+    if( $_POST['']="" || $_POST['']=""  || $_POST['']=""  ||
+        $_POST['']=""  || $_POST['']=""  || $_POST['']="" || $_POST['']="")
     {
-        echo "Niet alle invoervelden zijn ingevuld!";
+        // echo "Niet alle invoervelden zijn ingevuld!";
     }
 
     /*hash pwd*/
-    $hashedpwd = password_hash($pwd, PASSWORD_DEFAULT);
+    // $hashedpwd = password_hash($pwd, PASSWORD_DEFAULT);
 
     else
     {
