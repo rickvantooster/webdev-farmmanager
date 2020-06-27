@@ -1,6 +1,6 @@
 <?php
   session_start();
-  include 'database.php';
+  // include 'database.php';
   /*when form is submitted*/
   if((isset($_POST['submit'])))
   {
