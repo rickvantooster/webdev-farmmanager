@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet" href="./public/static/css/login.css">
+        <link rel="stylesheet" href="static/css/login.css">
       </head>
 <body>
 <div class="login-wrap">

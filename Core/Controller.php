@@ -31,6 +31,15 @@ class Controller{
 
     }
 
-    
+    public function view($view, $params = [], $status = 200, $additionalHeaders = array()){
+        http_response_code($status);
+        foreach($additionalHeaders as $header => $value){
+            header("$header: $value");
+        }
+        require_once("../views/".$view);
+
+        return "";
+    }
+ 
 
 }

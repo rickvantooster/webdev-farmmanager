@@ -1,5 +1,4 @@
 <?php
-include("includes.php");
 
 //constant definitions for database credentials.
 

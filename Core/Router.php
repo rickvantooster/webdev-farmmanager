@@ -2,7 +2,7 @@
 
 //https://stackoverflow.com/questions/30130913/how-to-do-url-matching-regex-for-routing-framework
 namespace Core;
-require_once("Request.php");
+require_once("../includes.php");
 class Router{
 
     private $routes = array();
