@@ -1,4 +1,2 @@
 <?php
-echo "index.php";
-
-
+include '../Controllers/login.html';

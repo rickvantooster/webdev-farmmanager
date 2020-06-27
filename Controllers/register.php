@@ -1,9 +1,9 @@
 <?php
   session_start();
+  include 'database.php';
   /*when form is submitted*/
   if((isset($_POST['submit'])))
   {
-    include 'database.php';
 
     $username=$_POST[''];
     $pwd=$_POST[''];
@@ -14,7 +14,7 @@
     $email=$_POST[''];
 
     /*form handling*/
-    if(empty($username) || empty($password) || empty($name) ||
+    if($_POST['']="" || empty($password) || empty($name) ||
     empty($adres) || empty($city) || empty($email))
     {
         echo "Niet alle invoervelden zijn ingevuld!";
