@@ -1,0 +1,66 @@
+h1{
+  font-family: Verdana;
+}
+a{
+  font-family: Verdana;
+}
+a li{
+  font-family: Verdana;
+}
+.container-header{
+  background-color: #ccc;
+  display: block;
+  height: 150px;
+}
+.header-menu{
+  display: inline-block;
+}
+.menu ul{
+  position: absolute;
+  display: inline-block;
+}
+.menu li{
+  display: inline-block;
+  list-style-type: none;
+}
+.menu li a{
+  display: inline;
+  text-decoration: none;
+}
+.login-details{
+  background-color: #aaa;
+  top: 0;
+  float: right;
+  font-family: Verdana;
+}
+.login-details ul{
+  list-style-type: none;
+  display: inline-block;
+}
+.login-details ul li{
+
+}
+.login-details ul li a{
+  font-family: Verdana;
+}
+.animal-tables{
+  background-color: #baa;
+  font-family: Verdana;
+}
+.animal-tables .table{
+
+}
+.product-tables{
+  background-color: #ada;
+  font-family: Verdana;
+}
+.product-tables .table{
+
+}
+.machine-tables{
+  background-color: #cab;
+  font-family: Verdana;
+}
+.machine-tables .table{
+
+}
