@@ -45,7 +45,6 @@ a li{
 }
 .animal-tables{
   background-color: #baa;
-  margin: 0 200px;
   font-family: Verdana;
 }
 .animal-tables .table{
@@ -53,7 +52,6 @@ a li{
 }
 .product-tables{
   background-color: #ada;
-  margin: 0 200px;
   font-family: Verdana;
 }
 .product-tables .table{
@@ -61,7 +59,6 @@ a li{
 }
 .machine-tables{
   background-color: #cab;
-  margin: 0 200px;
   font-family: Verdana;
 }
 .machine-tables .table{

@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>User Interface</title>
-    <link rel="stylesheet" href= "static/css/interface.css">
+    <link rel="stylesheet" href= "../public/static/css/interface.css">
   </head>
 
   <body>
