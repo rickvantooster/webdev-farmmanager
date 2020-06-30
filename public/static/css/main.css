@@ -9,11 +9,19 @@ a li{
 }
 .container-header{
   background-color: #ccc;
-  display: block;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
   height: 150px;
+  align-items: center;
 }
 .header-menu{
   display: inline-block;
+}
+.header-logo{
+  display: flex;
+  width: 100px;
+  margin: 0px 0px 0px -50px;
 }
 .menu ul{
   position: absolute;
@@ -28,9 +36,9 @@ a li{
   text-decoration: none;
 }
 .login-details{
+  display: inline-block;
+  margin: 0 -100px 0px;
   background-color: #aaa;
-  top: 0;
-  float: right;
   font-family: Verdana;
 }
 .login-details ul{
@@ -47,20 +55,43 @@ a li{
   background-color: #baa;
   font-family: Verdana;
 }
-.animal-tables .table{
-
+.animal-tables .table {
+    border: 2px solid black;
+    margin: 10px 0px;
 }
 .product-tables{
   background-color: #ada;
   font-family: Verdana;
+  margin: 0;
 }
 .product-tables .table{
-
+  border: 2px solid black;
+  margin: 10px 0px;
 }
 .machine-tables{
   background-color: #cab;
   font-family: Verdana;
 }
 .machine-tables .table{
-
+  border: 2px solid black;
+  margin: 10px 0px;
+}
+.primary-btn{
+  border: 2px solid black;
+  border-radius: 1em;
+  padding: 5px 10px;
+}
+.footer-container{
+  display: flex;
+  background-color: #ccc;
+  height: 150px;
+}
+.copyright{
+  margin: auto;
+}
+.copyright ul{
+  list-style-type: none;
+}
+.copyright ul li{
+  font-family: Verdana;
 }
