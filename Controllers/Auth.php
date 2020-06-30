@@ -99,4 +99,10 @@ class Auth extends Controller{
 
     }
 
+    public function logout(Core\Request $req){
+        unset($_SESSION);
+
+        return $this->redirect(WEBROOT."public/");
+    }
+
 }

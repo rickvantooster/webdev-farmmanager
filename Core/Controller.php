@@ -36,8 +36,21 @@ class Controller{
         foreach($additionalHeaders as $header => $value){
             header("$header: $value");
         }
+        foreach($params as &$param){
+            if(is_object($param)){
+                $param = (array) $param;
+            }
+        }
+
+        extract($params);
+
         require_once("../views/".$view);
 
+        return "";
+    }
+
+    public function redirect($to){
+        header("Location: ". $to);
         return "";
     }
  

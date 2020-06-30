@@ -1,6 +1,3 @@
-<?php
- include '../Core/Database.php'
- ?>
 <html>
 
   <head>
@@ -25,11 +22,11 @@
         </div>
         <div class="login-details">
           <ul>
-            <li>Hello, User123</li>
+            <li>Hello, <?= $user["username"]?></li>
             <li>Money: €10.000</li>
             <li>Date: 30-6-2019</li>
             <li><a href="#">Mijn gegevens</a></li>
-            <li><a href="#">Logout</a></li>
+            <li><a href="logout">Logout</a></li>
           <ul>
         </div>
       </div>
@@ -125,7 +122,7 @@
       <div class="footer-container">
         <div class="copyright">
           <ul>
-            <li>Copyright &copy; <?php echo date("Y");?></li>
+            <li>Copyright &copy; <?= $year ?></li>
             <li>Made by Rick, Coen en Brian</li>
           </ul>
         </div>
