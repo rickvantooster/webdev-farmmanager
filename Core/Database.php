@@ -14,6 +14,7 @@
                 
                 $this->conn = new \PDO($dsn, DB_USER, DB_PASSWORD);
                 $this->conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+                $this->conn->setAttribute(\PDO::ATTR_EMULATE_PREPARES, false);
             
             }catch(\PDOException $e){
                 http_response_code(500);
@@ -39,13 +40,13 @@
         public function selectQuery($sql, $params = array()){
             $stmt = $this->conn->prepare($sql);
             $stmt->execute($params);
-            return $stmt->fetchAll();
+            return $stmt->fetchAll() ?? null;
         }
     
         public function rowSelectQuery($sql, $params = array()){
             $stmt = $this->conn->prepare($sql);
             $stmt->execute($params);
-            return $stmt->fetchAll()[0];
+            return $stmt->fetchAll()[0] ?? null;
         }
     
         public function getLastInsert(){

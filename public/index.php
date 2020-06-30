@@ -10,8 +10,9 @@ $router = new Core\Router();
 
 
 
-$router->get("/register", "Register@showPage");
-$router->post("/register", "Register@registerUser");
+$router->get("/register", "Auth@showAuthPage");
+$router->post("/register", "Auth@registerUser");
+$router->post("/login", "Auth@loginUser");
 
 $url = "/".$_GET["p"];
 

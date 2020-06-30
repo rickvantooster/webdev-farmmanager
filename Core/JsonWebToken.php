@@ -1,14 +1,14 @@
 <?php
     namespace Core;
-    require_once("../Core/utils.php");
-    require_once("../config_init.php");
+    require_once("../Helpers/utils.php");
+    require_once("../includes.php");
     /**
      * TODO: implement other algorithms
      */
 
 class JsonWebToken{
 
-    public static function sign($payload, $claims){
+    public static function sign($payload, $claims = array()){
         $header = json_encode([
             "typ"=> "jwt",
             "alg" => "hs512"
@@ -69,5 +69,3 @@ class JsonWebToken{
     
     
 }
-
-print(JsonWebToken::sign(["user"=>"rick", "id"=>1], []));

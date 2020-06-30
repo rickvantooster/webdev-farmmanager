@@ -1,7 +1,9 @@
 <html>
     <head>
         <link rel="stylesheet" href="static/css/login.css">
-      </head>
+		<script src="static/js/login.js"></script>
+		<base href="http://localhost/webdev-farmmanager/public/">
+    </head>
 <body>
 <div class="login-wrap">
 	<div class="login-html">
@@ -10,7 +12,7 @@
 
     <div class="login-form">
 			<div class="sign-in-htm">
-        <form action="Controllers\login.php" method="POST" name="login">
+        <form action="" id="login-form" method="POST" name="login">
   				<div class="group">
   					<label for="user" class="label">Gebruikersnaam</label>
   					<input id="user" name="username" type="text" class="input">
@@ -24,7 +26,7 @@
   					<label for="check"><span class="icon"></span> Wachtwoord onthouden?</label>
   				</div> -->
   				<div class="group">
-  					<input type="submit" name="submitLog" class="button" value="Inloggen">
+  					<input type="submit" name="submitLog" class="button"  value="Inloggen">
   				</div>
   				<div class="hr"></div>
   				<!-- <div class="foot-lnk">
@@ -34,7 +36,7 @@
       </form>
 
 			<div class="sign-up-htm">
-        <form action="Controllers\register.php" method="POST">
+        <form action="" method="POST" id="signup-form">
   				<div class="group">
   					<label for="user" class="label">Gebruikersnaam</label>
   					<input id="user" name="username" type="text" class="input">
@@ -64,7 +66,7 @@
   					<input id="email" name="email" type="text" class="input">
   				</div>
   				<div class="group">
-  					<input type="submit" name="submitReg" class="button" value="Aanmelden">
+  					<input type="submit" name="submitReg" class="button" id="signup-btn" value="Aanmelden">
   				</div>
   				<div class="hr"></div>
   				<!-- <div class="foot-lnk">
