@@ -7,7 +7,6 @@ function registerForm(event){
     event.preventDefault();
 
 
-
     var formFields = {};
 
     document.getElementById("signup-form").querySelectorAll("input").forEach(el=>{
@@ -48,7 +47,7 @@ function loginForm(event){
         body: JSON.stringify(formFields),
     }).then(res=>{
         res.json().then(data=>{
-            
+
             //TODO implement error handling.
         });
     });
