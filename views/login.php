@@ -1,7 +1,7 @@
 <html>
     <head>
-        <link rel="stylesheet" href="../public/static/css/login.css">
-		<script src="../public/static/js/login.js"></script>
+        <link rel="stylesheet" href="public/static/css/login.css">
+		<script src="public/static/js/login.js"></script>
 		<base href="http://localhost/webdev-farmmanager/public/">
     </head>
 <body>
