@@ -41,6 +41,14 @@ class Auth extends Controller{
             return $this->json(["error"=>"true", "message"=>"invalid email"], 401);
         }
 
+        if(strlen($pwd) < 8){
+            return $this->json(["error"=>"true", "message"=>"Password must be atleast 8 characters long"], 401);
+        }
+
+        if(strlen($username) < 8){
+            return $this->json(["error"=>"true", "message"=>"Username must be atleast 6 characters long"], 401);
+        }
+
         //ophalen van een database instance.
         $conn = Core\Database::getInstance();
 
