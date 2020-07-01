@@ -32,16 +32,16 @@
 			<div class="sign-up-htm">
         <form action="" method="POST" id="signup-form">
   				<div class="group">
-  					<label for="user" class="label">Gebruikersnaam*</label>
-  					<input id="user" name="username" type="text" class="input" pattern=".{8,}" required title="8 characters minimum">
+  					<label for="user" class="label">Gebruikersnaam* (min 6 tekens)</label>
+  					<input id="user" name="username" type="text" class="input" pattern=".{6,}" required title="6 karakters minimaal">
   				</div>
   				<div class="group">
-  					<label for="pass" class="label">Wachtwoord*</label>
-  					<input id="pass" name="pwd" type="password" class="input" pattern=".{8,}" data-type="password" required title="8 characters minimum">
+  					<label for="pass" class="label">Wachtwoord* (min 8 tekens)</label>
+  					<input id="pass" name="pwd" type="password" class="input" pattern=".{8,}" data-type="password" required title="8 karakters minimaal">
   				</div>
   				<div class="group">
-  					<label for="passcheck" class="label">Herhaal wachtwoord*</label>
-  					<input id="pwdcheck" name="pwdcheck" type="password" class="input" pattern=".{8,}" data-type="password" required title="8 characters minimum">
+  					<label for="passcheck" class="label">Herhaal wachtwoord* (min 8 tekens)</label>
+  					<input id="pwdcheck" name="pwdcheck" type="password" class="input" pattern=".{8,}" data-type="password" required title="8 karakters minimaal">
           </div>
           <div class="group">
   					<label for="name" class="label">Naam*</label>
