@@ -1,7 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="../public/static/css/login.css">
-		<script src="static/js/login.js"></script>
+		<script src="../public/static/js/login.js"></script>
 		<base href="http://localhost/webdev-farmmanager/public/">
     </head>
 <body>
@@ -13,16 +13,17 @@
     <div class="login-form">
 			<div class="sign-in-htm">
         <form action="" id="login-form" method="POST" name="login">
-  				<div class="group">
+          <p id="error"></p>
+          <div class="group">
   					<label for="user" class="label">Gebruikersnaam</label>
-  					<input id="user" name="username" type="text" class="input" required>
+  					<input id="username" name="username" type="text" class="input">
   				</div>
   				<div class="group">
   					<label for="pass" class="label">Wachtwoord</label>
-  					<input id="pass" name="pwd" type="password" class="input" data-type="password" required>
+  					<input id="pwd" name="pwd" type="password" class="input" data-type="password">
   				</div>
   				<div class="group">
-  					<input type="submit" name="submitLog" class="button"  value="Inloggen">
+  					<input type="submit" name="submitLog" id="submitLog" class="button"  value="Inloggen">
   				</div>
   				<div class="hr"></div>
   			</div>
@@ -39,8 +40,8 @@
   					<input id="pass" name="pwd" type="password" class="input" pattern=".{8,}" data-type="password" required title="8 characters minimum">
   				</div>
   				<div class="group">
-  					<label for="pass" class="label">Herhaal wachtwoord*</label>
-  					<input id="pass" name="pwdcheck" type="password" class="input" pattern=".{8,}" data-type="password" required title="8 characters minimum">
+  					<label for="passcheck" class="label">Herhaal wachtwoord*</label>
+  					<input id="pwdcheck" name="pwdcheck" type="password" class="input" pattern=".{8,}" data-type="password" required title="8 characters minimum">
           </div>
           <div class="group">
   					<label for="name" class="label">Naam*</label>

@@ -6,7 +6,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 function registerForm(event){
     event.preventDefault();
 
-
     var formFields = {};
 
     document.getElementById("signup-form").querySelectorAll("input").forEach(el=>{
@@ -29,10 +28,21 @@ function registerForm(event){
 }
 
 function loginForm(event){
+    var txt="";
+    var username=document.getElementById("username");
+    var pwd =document.getElementById("pwd");
+    var form=document.getElementById("login-form");
+    if(!(username.value || pwd.value)){
+      txt="Username/password is not correct";
+    }
+    else if(username.value.length < 8 || pwd.value.length < 8){
+      txt="Username/password is not correct";
+      form.reset();
+    }
+
+    document.getElementById("error").innerHTML = txt;
+
     event.preventDefault();
-
-
-
     var formFields = {};
 
     document.getElementById("login-form").querySelectorAll("input").forEach(el=>{
