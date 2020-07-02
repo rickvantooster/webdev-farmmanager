@@ -30,7 +30,6 @@
           <ul>
         </div>
       </div>
-    </div>
     </header>
 
     <section class="animal-tables">
