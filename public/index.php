@@ -18,8 +18,7 @@ $router->get("/logout", "Auth@logout");
 
 $url = "/".$_GET["p"];
 
-// var_dump($router->getRoutes());
-// var_dump($url);
+
 
 $router->handleRoute($url);
 

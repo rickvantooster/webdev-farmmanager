@@ -45,7 +45,7 @@ class Auth extends Controller{
             return $this->json(["error"=>"true", "message"=>"Password must be atleast 8 characters long"], 401);
         }
 
-        if(strlen($username) < 8){
+        if(strlen($username) < 6){
             return $this->json(["error"=>"true", "message"=>"Username must be atleast 6 characters long"], 401);
         }
 
