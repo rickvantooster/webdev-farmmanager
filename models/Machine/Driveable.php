@@ -6,8 +6,8 @@ class Driveable extends AbstractMachine{
     private $fuelConsumption;
     private $fuelLevel;
     
-    public function __construct($name, $status, $damage, $fuelLevel, $fuelConsumption){
-        parent::__construct($name,$status,$damage);
+    public function __construct($name, $status, $damage, $fuelLevel, $fuelConsumption, $id){
+        parent::__construct($name,$status,$damage, $id);
         $this->fuelConsumption = $fuelConsumption;
         $this->fuelLevel = $fuelLevel;
     }

@@ -1,10 +1,10 @@
 <?php
     namespace Core;
-    require_once("../Helpers/utils.php");
     require_once("../includes.php");
-    /**
-     * TODO: implement other algorithms
-     */
+    
+/**
+ * class voor JsonWebTokens word niet gebruikt in deze applicatie.
+ */
 
 class JsonWebToken{
 

@@ -1,13 +1,13 @@
 <?php
 namespace Models;
 
-use CropSupply;
-use FoodSupply;
+use Models\Supply\CropSupply;
+use Models\Supply\FoodSupply;
 use Models\Animal\Chicken;
 use Models\Animal\Cow;
 use Models\Machine\Driveable;
 use Models\Machine\Trailer;
-use VehicleSupply;
+use Models\Supply\VehicleSupply;
 
 require_once("../includes.php");
 
@@ -33,9 +33,9 @@ class Farm{
 
         foreach($animals as $animal){
             if($animal["type"] === "chicken"){
-                $this->animals[] = new Chicken($animal["status"], $animal["quantity"]);
+                $this->animals[] = new Chicken($animal["status"], $animal["quantity"], $animal["id"]);
             }elseif($animal["type"] === "cow"){
-                $this->animals[] = new Cow($animal["status"], $animal["birthdate"], $animal["name"], $animal["legalRegistrationTag"]);
+                $this->animals[] = new Cow($animal["status"], $animal["birthdate"], $animal["name"], $animal["legalRegistrationTag"], $animal["id"]);
             }
         }
 
@@ -46,9 +46,9 @@ class Farm{
        
         foreach($machines as $machine){
             if(in_array($machine["type"], ["harvester", "tractor", "combiner"])){
-                $this->machines[] = new Driveable($machine["name"], $machine["status"], $machine["damage"], $machine["fuellevel"], $machine["fuelconsumption"]);
+                $this->machines[] = new Driveable($machine["name"], $machine["status"], $machine["damage"], $machine["fuellevel"], $machine["fuelconsumption"], $machine["id"]);
             }else{
-                $this->machines[] = new Trailer($machine["name"], $machine["status"], $machine["damage"]);
+                $this->machines[] = new Trailer($machine["name"], $machine["status"], $machine["damage"], $machine["id"]);
             }
         }
 
@@ -57,11 +57,11 @@ class Farm{
 
         foreach($supplies as $supply){
             if(in_array($supply["type"], ["corn", "grain", "soja"])){
-                $this->supplies[] = new FoodSupply($supply["name"], $supply["remaining"], $supply["type"]);
+                $this->supplies[] = new FoodSupply($supply["name"], $supply["remaining"], $supply["type"], $supply["supplies_id"]);
             }elseif(in_array($supply["type"], ["fertilizer", "gassSeeds"])) {
-                $this->supplies[] = new CropSupply($supply["name"], $supply["remaining"], $supply["type"]);
+                $this->supplies[] = new CropSupply($supply["name"], $supply["remaining"], $supply["type"],$supply["supplies_id"]);
             }else{
-                $this->supplies[] = new VehicleSupply($supply["name"], $supply["remaining"], $supply["type"]);
+                $this->supplies[] = new VehicleSupply($supply["name"], $supply["remaining"], $supply["type"], $supply["supplies_id"]);
             }
         }
 
@@ -72,7 +72,7 @@ class Farm{
     }
 
 
-
+    
 
 
 }

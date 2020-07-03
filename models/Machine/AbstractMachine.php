@@ -9,8 +9,8 @@ abstract class AbstractMachine extends \AbstractBuyable{
     private $status;
     private $damage;
 
-    public function __construct($name, $status, $damage){
-
+    public function __construct($name, $status, $damage, $id){
+        $this->id = $id;
         $this->name = $name;
         $this->status = $status;
         $this->damage = $damage;
@@ -34,6 +34,10 @@ abstract class AbstractMachine extends \AbstractBuyable{
 
     public function setDamage($damage){
         $this->damage = $damage;
+    }
+
+    public function getId(){
+        return $this->id;
     }
 
 }

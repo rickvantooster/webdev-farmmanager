@@ -5,6 +5,11 @@ namespace Core;
 require_once("../includes.php");
 class Router{
 
+    /**
+     * $routes ziet er zo uit:
+     * [route] => ["GET" => "class@methode", "POST"=>"class@methode"]
+     */
+
     private $routes = array();
 
     public function getRoutes(){
@@ -31,13 +36,16 @@ class Router{
         $this->routes[$route]["PATCH"] = $controller;
     }
 
+    //handelt een route af.
     public function handleRoute($url){
-        global $twig;
 
         $routes = array_keys($this->routes);
         $routes_methods = $this->routes;
         
         $parsedParams = array();
+        /**
+         * loop over alle routes die bestaan en vind de matchende route.
+         */
         foreach($routes as $route){
             $patternAsRegex = $this->buildRegexp($route);
             if(!!$patternAsRegex){
@@ -46,15 +54,20 @@ class Router{
                         $matches,
                         array_flip(array_filter(array_keys($matches), 'is_string'))
                     );
+                    /**
+                     * transformeert een parameter in de url na een param die door gegeven wordt aan de controller.
+                     * bijvoorbeeld wanneer de route /hello/:name is
+                     * en de gebruiker doet een request naar /hello/world
+                     * dan is parsedParams ["name" => "world"] 
+                     */
                     foreach($params as $key => $value){
                         
                         $parsedParams[$key] = $value;
 
                     }
                     $REQUEST_METHOD = $_SERVER["REQUEST_METHOD"];
-
                     if(isset($routes_methods[$route][$REQUEST_METHOD])){
-                        
+
                             $controllerMethodPair = explode("@", $routes_methods[$route][$REQUEST_METHOD]);
 
                             $name = $controllerMethodPair[0];
@@ -97,30 +110,24 @@ class Router{
     }
 
     private function buildRegexp($pattern){
-        // $pattern = preg_quote($pattern);
-        //return false when pattern is invalid.
+       
+        //returns false wanneer de pattern invalid is.
         if (preg_match('/[^-:\/_{}()a-zA-Z\d]/', $pattern))
             return false; 
 
-        // Turn "(/)" into "/?"
+        // verandered "(/)" naar "/?"
         $pattern = preg_replace('#\(/\)#', '/?', $pattern);
 
-        // Create capture group for ":parameter"
+        // maakt een capture group voor ":parameter"
         $allowedParamChars = '[a-zA-Z0-9\_\-]+';
         $pattern = preg_replace(
-            '/:(' . $allowedParamChars . ')/',   # Replace ":parameter"
-            '(?<$1>' . $allowedParamChars . ')', # with "(?<parameter>[a-zA-Z0-9\_\-]+)"
+            '/:(' . $allowedParamChars . ')/',   # vervang ":parameter"
+            '(?<$1>' . $allowedParamChars . ')', # met "(?<parameter>[a-zA-Z0-9\_\-]+)"
             $pattern
         );
 
-        // Create capture group for '{parameter}'
-        $pattern = preg_replace(
-            '/{('. $allowedParamChars .')}/',    # Replace "{parameter}"
-            '(?<$1>' . $allowedParamChars . ')', # with "(?<parameter>[a-zA-Z0-9\_\-]+)"
-            $pattern
-        );
 
-        // Add start and end matching
+        //start en eind matching toevoegen
         $patternAsRegex = "@^" . $pattern . "$@D";
 
         return $patternAsRegex;

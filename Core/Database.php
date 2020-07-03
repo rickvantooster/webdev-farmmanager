@@ -18,7 +18,6 @@
             
             }catch(\PDOException $e){
                 http_response_code(500);
-                //implement log file builder. And put exception and trace in it.
                 echo "Error occured while trying to setup a connection to the database";
                 echo $e;
             }

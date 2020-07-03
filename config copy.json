@@ -1,0 +1,13 @@
+{
+    "database":{
+        "user": "",
+        "password": "",
+        "database": "",
+        "host": ""
+    },
+    "jwt":{
+        "secret_file": "jwt_secret.key"
+    }
+
+
+}

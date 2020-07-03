@@ -1,5 +1,10 @@
 <?php
 namespace Core;
+
+/**
+ * class die bepaalde informatie van de request opslaat.
+ */
+
 class Request{
     public $url;
     public $route;
