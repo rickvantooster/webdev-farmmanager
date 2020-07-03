@@ -145,11 +145,60 @@
       <div class="table">
         <h1>Producten</h1>
         <table>
+
           <tr>
             <th> Name  </th>
             <th> Price </th>
             <th> Status </th>
             <th> Remaining </th>
+          </tr>
+
+          <tr>
+            <td> Graan   </td>
+            <td> 1.00  </td>
+            <td> Active   </td>
+            <td> 10 </td>
+            <td>
+              <button class="primary-btn" type="button" data-toggle="modal" data-target="#sellProductModal">Verkopen</button>
+              <div class="modal fade" id="sellProductModal" role="dialog">
+                 <div class="modal-dialog">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <button type="button" class="close" data-dismiss="modal">&times;</button>
+                       <h4 class="modal-title">Product verkopen</h4>
+                     </div>
+                     <div class="modal-body">
+                       <p>Voor hoeveel geld wil je dit product verkopen?</p>
+                       €<input type="text" class="modalform" id="modalform" pattern="[0-9]" size="3" placeholder="0.00">
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-default" data-dismiss="modal">Verkopen</button>
+                       <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+              </td>
+              <td>
+              <button class="primary-btn" type="button" data-toggle="modal" data-target="#destroyProductModal">Vernietigen</button>
+              <div class="modal fade" id="destroyProductModal" role="dialog">
+                 <div class="modal-dialog">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <button type="button" class="close" data-dismiss="modal">&times;</button>
+                       <h4 class="modal-title">Product vernietigen</h4>
+                     </div>
+                     <div class="modal-body">
+                       <p>Weet je zeker dat je dit product wilt vernietigen?</p>
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-default" data-dismiss="modal">Vernietigen</button>
+                       <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </td>
           </tr>
           <tr>
             <td> Graan   </td>
@@ -176,8 +225,8 @@
                    </div>
                  </div>
                </div>
-            </td>
-            <td>
+              </td>
+              <td>
               <button class="primary-btn" type="button" data-toggle="modal" data-target="#destroyProductModal">Vernietigen</button>
               <div class="modal fade" id="destroyProductModal" role="dialog">
                  <div class="modal-dialog">
