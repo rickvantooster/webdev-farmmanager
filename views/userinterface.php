@@ -3,7 +3,11 @@
   <head>
     <title>User Interface</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href= "../public/static/css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
 
   <body>
@@ -64,12 +68,77 @@
              <td> Sell </td>
              <td> 1    </td>
              <td> 2018-09-09 </td>
-             <td><button class="primary-btn" type="button">Verkopen</button><td>
-             <td><button class="primary-btn" type="button">Voeden</button><td>
-             <td><button class="primary-btn" type="button">Slachten</button><td>
+             <td>
+               <button class="primary-btn" type="button" data-toggle="modal" data-target="#sellAnimalModal">Verkopen</button>
+               <div class="modal fade" id="sellAnimalModal" role="dialog">
+                 <div class="modal-dialog">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <button type="button" class="close" data-dismiss="modal">&times;</button>
+                       <h4 class="modal-title">Dier verkopen</h4>
+                     </div>
+                     <div class="modal-body">
+                       <p>Voor hoeveel geld wil je dit dier verkopen?</p>
+                       €<input type="text" class="modalform" id="modalform" pattern="[0-9]" size="3" placeholder="0.00">
+                     </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Verkopen</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </td>
+             <td>
+               <button class="primary-btn" type="button" data-toggle="modal" data-target="#feedAnimalModal">Voeden</button>
+               <div class="modal fade" id="feedAnimalModal" role="dialog">
+                 <div class="modal-dialog">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <button type="button" class="close" data-dismiss="modal">&times;</button>
+                       <h4 class="modal-title">Dier voeden</h4>
+                     </div>
+                     <div class="modal-body">
+                       <p>Wat wil je dit dier voeden?</p>
+                       <select id="feedType" name="feedType">
+                         <option value="mais">Mais</option>
+                         <option value="grassbrok">Grasbrok</option>
+                         <option value="pigbrok">Varkensbrok</option>
+                       </select>
+                       <button type="submit" id="submit">Voeden</button>
+                     </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </td>
+             <td>
+               <button class="primary-btn" type="button" data-toggle="modal" data-target="#slaughterAnimalModal">Slachten</button>
+               <div class="modal fade" id="slaughterAnimalModal" role="dialog">
+                 <div class="modal-dialog">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <button type="button" class="close" data-dismiss="modal">&times;</button>
+                       <h4 class="modal-title">Dier slachten</h4>
+                     </div>
+                     <div class="modal-body">
+                       <p>Weet uw zeker dat u dit dier wil slachten?</p>
+                       <p>Slachtprijs: €50,-</p>
+                     </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Slachten</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </td>
           </tr>
         </table>
       </div>
+      <!-- Modal content-->
     </section>
 
     <section class="product-tables">
@@ -87,8 +156,47 @@
             <td> 1.00  </td>
             <td> Active   </td>
             <td> 10 </td>
-            <td><button class="primary-btn" type="button">Verkopen</button><td>
-            <td><button class="primary-btn" type="button">Vernietigen</button><td>
+            <td>
+              <button class="primary-btn" type="button" data-toggle="modal" data-target="#sellProductModal">Verkopen</button>
+              <div class="modal fade" id="sellProductModal" role="dialog">
+                 <div class="modal-dialog">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <button type="button" class="close" data-dismiss="modal">&times;</button>
+                       <h4 class="modal-title">Product verkopen</h4>
+                     </div>
+                     <div class="modal-body">
+                       <p>Voor hoeveel geld wil je dit product verkopen?</p>
+                       €<input type="text" class="modalform" id="modalform" pattern="[0-9]" size="3" placeholder="0.00">
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-default" data-dismiss="modal">Verkopen</button>
+                       <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+            </td>
+            <td>
+              <button class="primary-btn" type="button" data-toggle="modal" data-target="#destroyProductModal">Vernietigen</button>
+              <div class="modal fade" id="destroyProductModal" role="dialog">
+                 <div class="modal-dialog">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <button type="button" class="close" data-dismiss="modal">&times;</button>
+                       <h4 class="modal-title">Product vernietigen</h4>
+                     </div>
+                     <div class="modal-body">
+                       <p>Weet je zeker dat je dit product wilt vernietigen?</p>
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-default" data-dismiss="modal">Vernietigen</button>
+                       <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </td>
           </tr>
         </table>
       </div>
@@ -109,9 +217,68 @@
             <td> Lawnmower </td>
             <td> Active </td>
             <td> Heavy </td>
-            <td><button class="primary-btn" type="button">Verkopen</button><td>
-            <td><button class="primary-btn" type="button">Onderhoud</button><td>
-            <td><button class="primary-btn" type="button">Vernietigen</button><td>
+            <td>
+              <button class="primary-btn" type="button" data-toggle="modal" data-target="#sellMachineModal">Verkopen</button>
+              <div class="modal fade" id="sellMachineModal" role="dialog">
+                 <div class="modal-dialog">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <button type="button" class="close" data-dismiss="modal">&times;</button>
+                       <h4 class="modal-title">Machine verkopen</h4>
+                     </div>
+                     <div class="modal-body">
+                       <p>Voor hoeveel geld wil je deze Machine verkopen?</p>
+                       €<input type="text" class="modalform" id="modalform" pattern="[0-9]" size="3" placeholder="0.00">
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-default" data-dismiss="modal">Verkopen</button>
+                       <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+            </td>
+            <td>
+              <button class="primary-btn" type="button" data-toggle="modal" data-target="#maintenanceMachineModal">Onderhoud</button>
+              <div class="modal fade" id="maintenanceMachineModal" role="dialog">
+                 <div class="modal-dialog">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <button type="button" class="close" data-dismiss="modal">&times;</button>
+                       <h4 class="modal-title">Machine onderhoud</h4>
+                     </div>
+                     <div class="modal-body">
+                       <p>Machine onderhoud: Heavy</p>
+                       <p>Onderhoud kost: €25,-</p>
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-default" data-dismiss="modal">Reparen</button>
+                       <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+            </td>
+            <td>
+              <button class="primary-btn" type="button" data-toggle="modal" data-target="#destroyMachineModal">Vernietigen</button>
+              <div class="modal fade" id="destroyMachineModal" role="dialog">
+                 <div class="modal-dialog">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <button type="button" class="close" data-dismiss="modal">&times;</button>
+                       <h4 class="modal-title">Machine vernietigen</h4>
+                     </div>
+                     <div class="modal-body">
+                       <p>Weet u zeker dat u deze Machine wilt vernietigen?</p>
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-default" data-dismiss="modal">Vernietigen</button>
+                       <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+            </td>
           </tr>
         </table>
       </div>
