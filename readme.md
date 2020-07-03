@@ -7,5 +7,6 @@ Gemaakt door Brian, Coen & Rick
 2. Zet je database verbinding gegevens in de   config.json.
 3. importeer "db dump.sql" in je database.
 
-That's it.
+That's all. 
 
+Je kan nu naar de localhost/<naam van folder\>/public/
